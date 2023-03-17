@@ -18,19 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('posts/{post}', function ($slug) {
-
-    // $path  = __DIR__ . "/../resources/posts/{$slug}.html";
-    // // ddd('Hello');
-
-    // if (!file_exists($path)) {
-    //     return redirect('/');
-    // }
-
-    // $post = cache()->remember("posts.{$slug}", now()->addDays(1), function(){
-    //     return file_get_contents($path);
-    // });
-
-
+    $post = cache()->remember("posts.{$slug}", now()->addDays(1), function(){
+         // return post data
+    });
     return view('post', [
         'post' => Post::find($slug)
     ]);
