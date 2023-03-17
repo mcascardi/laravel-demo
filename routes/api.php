@@ -57,3 +57,8 @@ Route::get('/proxy', function (Request $request) {
 Route::post('/proxy', function (Request $request) {
     return redirect('/api/proxy/anything');
 });
+
+
+Route::get('/', function(Request $request) {
+    return redirect('/api/proxy/anything');
+});
